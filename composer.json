@@ -1,0 +1,25 @@
+{
+    "name": "olliebrennan/zf2-image-magick",
+    "description": "A simple ZF2 Image Magick LIbrary",
+    "keywords": ["image-magick", "zend-framework", "zf2"],
+    "homepage": "olliebrennan/Zf2ImageMagick",
+    "type": "library",
+    "license": "New BSD License",
+    "authors": [
+        {
+            "name": "Ollie Brennan",
+            "email": "github@epicarena.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Zf2ImageMagick": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
