@@ -45,7 +45,7 @@ class ImageMagick extends EventProvider implements ServiceManagerAwareInterface
         }
 
         if ($drawing = $entity->getDrawing()) {
-            $shellCmd .= '-draw ' . $drawing;
+            $shellCmd .= ' -draw ' . $drawing;
         }
 
         if ($whitespace = $entity->getWhitespace()) {
@@ -64,8 +64,7 @@ class ImageMagick extends EventProvider implements ServiceManagerAwareInterface
             $shellCmd .= ' -comment ' . '\'' . $comment . '\'';
         }
 
-        $shellCmd = ' ' . $entity->getNewFilename() . ' 2>&1';
-
+        $shellCmd .= ' ' . $entity->getNewFilename() . ' 2>&1';
         return shell_exec($shellCmd);
     }
 
@@ -83,8 +82,6 @@ class ImageMagick extends EventProvider implements ServiceManagerAwareInterface
             ->setPointsize(15)
             ->setFill('white')
             ->setStrokeWidth(5)
-            ->setComment('Made with love')
-            ->setDrawing('"gravity SouthWest text +4 +4 \'Made with love\'"')
             ->setWhitespace('xc:white +swap')
             ->setWhitespaceComposite(true)
             ->setWhitespaceGravity('center');

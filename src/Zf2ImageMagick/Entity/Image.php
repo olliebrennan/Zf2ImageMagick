@@ -81,22 +81,6 @@ class Image
     }
 
 	/**
-     * @param string $whitespaceGravity
-     */
-    public function setWhitespaceGravity($whitespaceGravity)
-    {
-        $this->whitespaceGravity = $whitespaceGravity;
-    }
-
-	/**
-     * @param boolean $whitespaceComposite
-     */
-    public function setWhitespaceComposite(boolean $whitespaceComposite)
-    {
-        $this->whitespaceComposite = (boolean) $whitespaceComposite;
-    }
-
-	/**
      * @return the $originalFilename
      */
     public function getOriginalFilename()
@@ -263,6 +247,24 @@ class Image
     public function setDrawing($drawing)
     {
         $this->drawing = $drawing;
+        return $this;
+    }
+
+	/**
+     * @param string $whitespaceGravity
+     */
+    public function setWhitespaceGravity($whitespaceGravity)
+    {
+        $this->whitespaceGravity = $whitespaceGravity;
+        return $this;
+    }
+
+	/**
+     * @param boolean $whitespaceComposite
+     */
+    public function setWhitespaceComposite($whitespaceComposite)
+    {
+        $this->whitespaceComposite = (boolean) $whitespaceComposite;
         return $this;
     }
 }
